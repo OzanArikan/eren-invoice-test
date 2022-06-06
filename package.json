@@ -3,7 +3,7 @@
 	"version": "3.4.2-SNAPSHOT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/primefaces/sakai-vue.git"
+		"url": "https://github.com/OzanArikan/eren-invoice-test.git"
 	},
 	"license": "MIT",
 	"scripts": {
