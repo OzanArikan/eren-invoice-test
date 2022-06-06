@@ -1,6 +1,6 @@
 {
 	"name": "einvoice",
-	"version": "3.4.2-SNAPSHOT",
+	"version": "v1.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/OzanArikan/eren-invoice-test.git"
