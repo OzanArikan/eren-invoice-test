@@ -140,12 +140,12 @@ const routes = [
                 component: () => import('./components/IconsDemo.vue')
             }
         ]
-    },
+    },*/
     {
         path: '/login',
         name: 'login',
         component: () => import('./pages/Login.vue')
-    },
+    }/*,
     {
         path: '/landing',
         name: 'landing',
@@ -173,5 +173,15 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes,
 });
+
+/*router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !store.state.user.token) {
+      next({ name: "Login" });
+    } else if (store.state.user.token && to.meta.isGuest) {
+      next({ name: "Dashboard" });
+    } else {
+      next();
+    }
+  });*/
 
 export default router;

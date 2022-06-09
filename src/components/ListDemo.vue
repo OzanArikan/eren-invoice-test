@@ -2,6 +2,7 @@
 	<div class="grid">
 		<div class="col-12">
 			<div class="card">
+			<Toast />
 				<h5>Gelen Faturalar</h5>
 				<DataView :value="dataviewValue" :layout="layout" :paginator="true" :rows="10" :sortOrder="sortOrder"
 					:sortField="sortField" :lazy="true">
@@ -216,7 +217,7 @@ export default {
                 {name: 'Spain', code: 'ES'},
                 {name: 'United States', code: 'US'}
             ],
-			message: []
+			messages: []
 		}
 	},
 	//productService: null,
@@ -251,7 +252,7 @@ export default {
 			//alert("Bastin" + index);
 			if (index === 1) this.$router.push({ name: 'overlay' })
 			if (index === 2) this.$router.push({ name: 'overlay' })
-			if (index === 3) this.$toast.add({severity:'info', summary: 'Info Message', detail:'Message Content', life: 3000});
+			if (index === 3) this.$toast.add({severity:'success', summary: 'Bilgi', detail:'Fatura görüntüsü hazırlanıyor', life: 5000});
 		},
 		toggle() {
 			//this.$refs.menu.toggle(event);

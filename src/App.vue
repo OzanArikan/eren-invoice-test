@@ -149,7 +149,7 @@ export default {
     },
     created(){
         //this.$router.push('/list');
-        this.$router.push({ name: 'list' })
+        this.$router.push({ name: 'login' })
     },
     watch: {
         $route() {
