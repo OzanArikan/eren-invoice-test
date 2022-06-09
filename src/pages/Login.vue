@@ -14,7 +14,7 @@
                         <span class="text-600 font-medium"> Giriş Yapınız </span>
                     </div>
                 
-                    <div class="w-full md:w-4 mx-auto">
+                    <div class="w-full md:w-6 mx-auto">
                         <label for="email1" class="block text-900 text-xl font-medium mb-2">Kullanıcı Adı</label>
                         <InputText id="email1" v-model="email" type="text" class="w-full mb-3" placeholder="Email" style="padding:1rem;" />
                 
