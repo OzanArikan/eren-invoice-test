@@ -205,6 +205,7 @@ export default {
 				}
 			],
 			display: false,
+			selectedCountry: null,
 			countries: [
                 {name: 'Hasan', code: 'HERO5'},
                 {name: 'Emre', code: 'HEROT'},

@@ -19,8 +19,14 @@
                         <InputText id="email1" v-model="email" type="text" class="w-full mb-3" placeholder="Email" style="padding:1rem;" />
                 
                         <label for="password1" class="block text-900 font-medium text-xl mb-2">Şifre</label>
-                        <Password id="password1" v-model="password" placeholder="Password" :toggleMask="true" class="w-full mb-3" inputClass="w-full" inputStyle="padding:1rem"></Password>
-                
+                        <Password id="password1" v-model="password" placeholder="Şifre" :feedback="false"  :toggleMask="true" class="w-full mb-3" inputClass="w-full" inputStyle="padding:1rem"></Password>
+                      
+                        <label for="company" class="block text-900 text-xl font-medium mb-2">Şirket</label>
+                        <div class="p-fluid mb-5">
+                        <Dropdown v-model="selectedCompany" :options="companies" optionLabel="name"
+												:filter="true" placeholder="Şirket Seçiniz" :showClear="true">
+											</Dropdown>
+                        </div>
                         <div class="flex align-items-center justify-content-between mb-5">
                             <div class="flex align-items-center">
                                 <Checkbox id="rememberme1" v-model="checked" :binary="true" class="mr-2"></Checkbox>
@@ -28,7 +34,7 @@
                             </div>
                             <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Şifremi Unuttum?</a>
                         </div>
-                        <Button label="Giriş" class="w-full p-3 text-xl" @click = "signIn"></button>
+                        <Button label="Giriş" class="w-full p-3 text-xl" :loading="loading[3]" @click="load(3)" ></button>
                     </div>
                 </div>
             </div>
@@ -42,7 +48,19 @@ export default {
         return {
             email: '',
             password: '',
-            checked: false
+            checked: false,
+            selectedCompany : null,
+            companies: [
+                {name: 'Erde Pazarlama ', code: '104'},
+                {name: 'Devanlay', code: '105'},
+                {name: 'Modern Dış Ticaret', code: '106'},
+                {name: 'Eren Perakende', code: '4726'},
+                {name: 'Ganter', code: '4825'},
+                {name: 'Dust Street', code: '9214'},
+                {name: 'Erkops', code: '9825'},
+                {name: 'EPR Tekstil', code: '4726'}
+            ],
+            loading: [false, false, false]
         }
     },
     computed: {
@@ -57,6 +75,10 @@ export default {
 		},
         signIn(){
            this.$router.push({ name: 'list' })
+        },
+        load(index) {
+            this.loading[index] = true;
+            setTimeout(() => this.loading[index] = false, 3000);
         }
     }
 }
