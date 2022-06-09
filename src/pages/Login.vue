@@ -78,7 +78,11 @@ export default {
         },
         load(index) {
             this.loading[index] = true;
-            setTimeout(() => this.loading[index] = false, 3000);
+            setTimeout(
+                  () => {this.loading[index] = false
+                  this.$router.push({ name: 'list' })} 
+                  , 3000);
+            
         }
     }
 }
